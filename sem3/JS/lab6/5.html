@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>JS getComputedStyle() Demo</title>
+    
+</head>
+<body>
+    <h2>Reading an writing content to a text element</h2>
+	<p id="read">This is the first paragraph written in HTML code</p>
+    <script>
+        let read=document.getElementById('read');
+let content=read.textContent;
+console.log(`Read content: "${content}"`);
+let write=document.createElement('p');
+write.textContent='This is the second paragraph from JS code';
+console.log(`Written content: "${write.textContent}"`);
+let body=document.querySelector('body');
+body.append(write);
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Co-ordinates</title>
+    <style>
+        #demo{
+            height: 400px;
+            width: 400px;
+            background-color: black;
+            color:white;
+        }
+    </style>
+</head>
+<body>
+    <p>Click in the div element below to get the x (horizontal) and y (vertical) coordinates of the mouse pointer, when it is clicked.</p>
+
+    <div onclick="showCoords(event)"><p id="demo"></p></div>
+    
+    <p><strong>Tip:</strong> Try to click different places in the div.</p>
+    
+    <script>
+    function showCoords(event) {
+        var cX = event.clientX;
+        var sX = event.screenX;
+        var cY = event.clientY;
+        var sY = event.screenY;
+        var pX = event.pageX;
+        var pY = event.pageY;
+        var coords1 = "Screen X/Y: (" + sX + ", " + cY + ")";
+        var coords2 = "Client X/Y: (" + cX + ", " + sY + ")";
+        var coords3 = "Page X/Y: (" + pX + ", " + pY + ")";
+        
+        document.getElementById("demo").innerHTML = coords1 + "<br>" + coords2 + "<br>" + coords3;
+    }
+    </script>
+</body>
+</html>

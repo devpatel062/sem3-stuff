@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input class="input" type="text" placeholder="fill me">
+    <button onclick="change()" class="button" id="myButton1" placeholder="hi">Click Me</button>
+    
+    <script>
+        function change() // no ';' here
+        {
+            var elem = document.getElementById("myButton1");
+            if (elem.value=="Close Curtain") elem.value = "Open Curtain";
+            else elem.value = "Close Curtain";
+        }
+      let input = document.querySelector(".input");
+      let button = document.querySelector(".button");
+
+        button.disabled = true; //setting button state to disabled
+
+        input.addEventListener("change", stateHandle);
+
+        function stateHandle() {
+            if (document.querySelector(".input").value === "") {
+                button.disabled = true; //button remains disabled
+            } else {
+                button.disabled = false; //button is enabled
+            }
+        }
+    </script>
+    
+</body>
+</html>

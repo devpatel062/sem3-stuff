@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>JS getComputedStyle() Demo</title>
+    <style type="text/css">
+        .message {
+            background-color: #fff3d4;
+            border: solid 1px #f6b73c;
+            padding: 20px;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+    <p class="message" style="color:red">
+        This is a JS getComputedStyle() Demo!
+    </p>
+
+    <script>
+        let message = document.querySelector('.message');
+        let style = getComputedStyle(message);
+
+        console.log('color:', style.color);
+        console.log('background color:', style.backgroundColor);
+    </script>
+</body>
+</html>

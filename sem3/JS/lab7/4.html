@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capture</title>
+</head>
+<body>
+    <p>Click in below text box for getting Caps lock state.</p>
+    <input type="text" onkeydown="getState(event)">
+    <p id="cl"></p>
+    <script>
+        function getState(event){
+            let CapsLk = event.getModifierState("CapsLock");
+            document.getElementById("cl").innerHTML = "CapsLock On: " + CapsLk; 
+        }
+    </script>
+</body>
+</html>

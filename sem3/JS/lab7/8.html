@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focus</title>
+</head>
+<body>
+    <input type="text" name="username" id="uname" placeholder="Focus on Username"><br><br>
+    <input type="password" name="password" id = "pwd" placeholder="Focus on Password">
+    <script>
+        let uname = document.getElementById('uname');
+        let pwd = document.getElementById('pwd');
+        pwd.style.backgroundColor = 'yellow';
+
+        uname.addEventListener('focus',(e) => {
+            e.target.style.backgroundColor = 'yellow';
+        })
+        
+        pwd.addEventListener('focus',(e) => {
+            e.target.style.backgroundColor = 'white';
+        })
+    </script>
+</body>
+</html>
