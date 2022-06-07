@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pong Game JavaScript</title>
+    <style>
+        body{
+            background-color: dimgray;
+        }
+        #pong{
+            border: 2px solid #FFF;
+            position: absolute;
+            margin :auto;
+            top:0;
+            right:0;
+            left:0;
+            bottom:0;
+        }
+        .button{
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+        #back {
+            background-color: white; 
+            color: black; 
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 18px;
+            border: 3px solid #4CAF50;
+            margin-top: 39%;
+            margin-left: 48%;
+            padding: 5px;  
+        }
+
+        #back:hover {
+            background-color: #4CAF50;
+            color: white;
+        }
+        
+    </style>
+</head>
+<body>
+   <canvas id="pong" width="600" height="400"></canvas>
+   <form action="hpage.html">
+       <button id="back"><a href="hpage.html"></a>BACK</button>
+   </form>
+   <script src="pong.js"></script>
+</body>
+</html>

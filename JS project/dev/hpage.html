@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Paaji+2&display=swap" rel="stylesheet">
+<style>
+	body {
+		background-image: linear-gradient(lightpink, lightblue);
+		background-repeat: repeat;
+		font-family: 'Baloo Paaji 2', cursive;
+	}
+
+	html {
+		height: 100%;
+	}
+	
+	.opt {
+		text-align: center;
+		border: 7px solid rgb(3, 58, 112);
+		width: 300px;
+		height: 200px;
+		padding: 10px;
+		margin: 10px;
+		border-radius: 4px;
+		font-family: Verdana,
+			Geneva, Tahoma, sans-serif;
+		background-color: dodgerblue;
+		color: black;
+		font-size: 25px;
+		font-weight: 300;
+		cursor: pointer;
+
+	}
+
+	.container {
+		position: absolute;
+		top: 20%;
+		left: 25%;
+		margin-top: -50px;
+		margin-left: -100px;
+
+	}
+
+	.container h1 {
+		padding-left: 7%;
+		padding-bottom: 8%;
+		font-size: 54px;
+		text-decoration: overline;
+		
+	}
+	
+	.container h2 {
+		padding-left: 13%;
+		padding-bottom: 5%;
+	}
+	
+	button{
+		animation-name: example;
+		animation-duration: 4s;
+		animation-iteration-count: infinite;
+	}
+	a{
+		text-decoration: none;
+		color:black;
+		font-weight: 1000;
+		font-family: 'Baloo Paaji 2', cursive;
+	}
+
+	@keyframes example {
+		0% {
+			background-color: rgb(255, 191, 191);
+		}
+
+		25% {
+			background-color: rgb(252, 252, 180);
+		}
+
+		50% {
+			background-color: rgb(194, 194, 255);
+		}
+
+		75% {
+			background-color: rgb(200, 253, 200);
+		}
+
+		100% {
+			background-color: rgb(255, 204, 204);
+		}
+	}
+</style>
+
+<body>
+		<div class="container">
+			<h1>WELCOME TO THE GAMING KINGDOM</h1>
+			<h2>CHOOSE ANY OF THE BELOW GAMES , YOU ARE INTERESTED IN . . . . . . </h2>
+			<button class="opt"><a href="index.html">PINGBALL</a></button>
+			<button class="opt"><a href="tic-tac-toe.html">TIC TAC TOE</a></button>
+			<button class="opt"><a href="2D-breakout.html">2D-BREAKOUT</a></button>
+		</div>
+
+
+</body>
+
+</html>

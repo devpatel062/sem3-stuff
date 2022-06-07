@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+
+<head>
+	<meta name="viewport" content=
+		"width=device-width, initial-scale=1.0">
+
+</head>
+<script src="style.js"></script>
+<style>
+	/* CSS Code */
+	/* Heading */
+	h1 {
+		color: orangered;
+		font-size: 45px;
+	}
+
+	/* 3*3 Grid */
+	#b1, #b2, #b3, #b4, #b5,
+	#b6, #b7, #b8, #b9 {
+		width: 160px;
+		height: 102px;
+		margin: auto;
+		border: 4px solid gray;
+		border-radius: 6px;
+		font-size: 50px;
+		color: aqua;
+		text-align: center;
+	}
+
+	/* Reset Button */
+	#but {
+		box-sizing: border-box;
+		width: 105px;
+		height: 45px;
+		border: 4px solid rgb(3, 58, 112);
+		margin: auto;
+		border-radius: 4px;
+		font-family: Verdana,
+			Geneva, Tahoma, sans-serif;
+
+		background-color: dodgerblue;
+		color: white;
+		font-size: 25px;
+		cursor: pointer;
+	}
+
+	#back {
+		box-sizing: border-box;
+		width: 105px;
+		height: 45px;
+		border: 4px solid rgb(3, 58, 112);
+		margin: auto;
+		border-radius: 4px;
+		font-family: Verdana,
+			Geneva, Tahoma, sans-serif;
+
+		background-color: dodgerblue;
+		color: white;
+		font-size: 25px;
+		cursor: pointer;
+	}
+	#back a{
+		text-decoration: none;
+		color: white;
+	}
+
+	/* Player turn space */
+	#print {
+		font-family: Verdana,
+			Geneva, Tahoma, sans-serif;
+
+		color: dodgerblue;
+		font-size: 20px;
+	}
+
+	/* Main Container */
+	#main {
+		text-align: center;
+		z-index:1;
+	}
+
+	/* Game Instruction Text */
+	#ins {
+		font-family: Verdana,
+			Geneva, Tahoma, sans-serif;
+			
+		color: dodgerblue;
+		font-size: 17px;
+	}
+	
+</style>
+<body bgcolor="rgb(55, 54, 209)">
+	
+	<div id="main">
+		
+		<h1>TIC TAC TOE</h1>
+
+		<!-- Game Instructions -->
+		<p id="ins">Just tap on the box and , here you GOOOO !!!<br><br>First Player starts as
+			<b>Player X</b><br>And<br>Second
+			Player as <b>Player 0</b>
+		</p>
+
+
+		<br><br>
+		<!-- 3*3 grid of Boxes -->
+		<input type="text" id="b1" onclick=
+			"myfunc_3(); myfunc();" readonly>
+
+		<input type="text" id="b2" onclick=
+			"myfunc_4(); myfunc();" readonly>
+
+		<input type="text" id="b3" onclick=
+			"myfunc_5(); myfunc();" readonly>
+		<br><br>
+
+		<input type="text" id="b4" onclick=
+			"myfunc_6(); myfunc();" readonly>
+			
+		<input type="text" id="b5" onclick=
+			"myfunc_7(); myfunc();" readonly>
+
+		<input type="text" id="b6" onclick=
+			"myfunc_8(); myfunc();" readonly>
+		<br><br>
+
+		<input type="text" id="b7" onclick=
+			"myfunc_9(); myfunc();" readonly>
+
+		<input type="text" id="b8" onclick=
+			"myfunc_10();myfunc();" readonly>
+
+		<input type="text" id="b9" onclick=
+			"myfunc_11();myfunc();" readonly>
+
+		<!-- Grid end here -->
+		<br><br><br>
+		<!-- Button to reset game -->
+		<button id="but" onclick="myfunc_2()">
+			RESET
+		</button>
+		<button id="back"><a href="hpage.html">
+			BACK</a>
+		</button>
+
+		<br><br>
+		<!-- Space to show player turn -->
+		<p id="print"></p>
+
+
+	</div>
+	
+</body>
+
+</html>

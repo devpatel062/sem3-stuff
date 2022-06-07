@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2D Breakout Game - JavScript</title>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Germania+One">
+    
+    <style>
+        *{
+            font-family: "Germania One";
+        }
+        #sound{
+            width: 40px;
+            height : 40px;
+            cursor: pointer;
+            position: absolute;
+            top : 680px;
+            left : 15px;
+        }
+        #gameover{
+            position: absolute;
+            width : 1500px;
+            height: 720px;
+            background: rgba(0,0,0,0.5);
+            display: none;
+        }
+        #youwon{
+            width: 200px;
+            position: absolute;
+            top : 120px;
+            left : 665px;
+            display: none;
+        }
+        #youlose{
+            width:1500px;
+            position: absolute;
+            top: 100px;
+            left : 0px;
+            display: none;
+        }
+        #restart{
+            position: absolute;
+            top: 320px;
+            left : 665px;
+            cursor: pointer;
+            font-size: 3em;
+            color : #FFF;
+        }
+        #back {
+            border: none;
+            background-color: rgb(196, 15, 15); 
+            color: rgb(255, 255, 255); 
+            font-family: 'Brush Script MT';
+            border-radius: 4px;
+            font-size: 20px;
+            cursor: pointer;
+            position: absolute;
+            top : 690px;
+            left : 1430px; 
+        }
+
+    </style>
+</head>
+<body>
+    <div class="sound">
+        <img src="img/SOUND_ON.png" alt="" id="sound">
+    </div>
+    
+    <div id="gameover">
+        <img src="img/youwon.png" alt="" id="youwon">
+        <img src="img/gameover.png" alt="" id="youlose">
+        <div id="restart">Play Again!</div>
+    </div>
+
+    <form action=" hpage.html">
+        <button id="back">BACK</button>
+    </form>
+   
+    <canvas id="breakout" width="1500" height="720"></canvas>
+    
+    <script src="components.js"></script>
+    <script src="game.js"></script>
+
+</body>
+</html>
