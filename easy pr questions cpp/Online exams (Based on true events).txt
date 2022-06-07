@@ -1,0 +1,81 @@
+As we all know because of covid epidemic and the lockdown all schools, colleges are taking online lectures and they are going to take online exams. So, there is one college named PDCT. Management of PDCT decides to take exam on P#XA aka Pariksha ghar se software. There is one of your friend named Piyush studying in PDCT.
+Piyush’s friends from PDCT are in confusion that what portion of syllabus they should read to get the maximum output through collaboration (cheating lol). 
+Although Piyush is topper of his batch but still he is unable to divide that what part of which book should be covered by whom, So he asks his very good friend you to solve this problem on his behalf.
+He told you that you should divide the pages such that the maximum number of pages assigned to a student is minimum. The condition here is that Every student is assigned to read some consecutive books.
+
+Input:
+First line: number of total test cases => T
+Next 2*T lines:
+	First line contains N => number of books, M => number of students
+Second line contains N space separated integers which represents the number of pages of N books in non-decreasing order.
+
+
+Constraints:
+1 < t < 5
+1< N < 10^4
+1< M <= 10^4
+1 <= Ai <= 10^6
+
+Output:
+Print the maximum number of pages that can be assigned to students.
+
+Sample Test case:
+
+Input:
+1
+4 2
+12 34 67 90
+
+Output:
+113
+
+Explanation:
+1st student : 12 , 34, 67 (total = 113)
+2nd student : 90 (total = 90)
+Print max(113, 90)
+Here in this condition max is 113
+In all other conditions max will be greater than 113 so 113 is minimum and hence this condition is true.
+
+
+
+
+
+
+
+
+#include<iostream>
+#include<string>
+using namespace std;
+
+int main()
+{
+    int cases,no_of_students,no_of_books,total=0;
+    cin>>cases>>no_of_books>>no_of_students;
+    int arr[no_of_books],temp;
+    for(int i=0;i<no_of_books;i++)
+    {
+        cin>>arr[i];
+    }
+    for(int i=0;i<no_of_books;i++)
+    {
+        for(int j=1+i;j<no_of_books;j++)
+        {
+            if(arr[i]>arr[j])
+            {
+                temp=arr[i];
+                arr[i]=arr[j];
+                arr[j]=temp;
+            }
+        }
+    }
+    for(int i=0;i<no_of_books-1;i++)
+    {
+        total+=arr[i];
+        //cout<<arr[i];
+    }
+    if(total>arr[no_of_books-1])
+        cout<<total;
+    else
+        cout<<arr[no_of_books-1];
+    return 0;
+}

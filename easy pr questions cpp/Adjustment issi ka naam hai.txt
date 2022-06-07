@@ -1,0 +1,97 @@
+Adjustment issi ka naam hai🙂
+
+Camila goes for shopping ever month to a nearby store to buy some groceries. The list of items she needs every month are (listed in priorities ) :
+1. Milk 60rs per day
+2. Salt 42rs per month
+3. Butter 56rs per month
+4. Vegetables 200rs per day
+5. Pulses 150rs per day
+6. Fruits 550rs per month
+7. Eggs 300 per month
+8. Biscuits 250rs per month
+9. Curd 20rs per day
+10. Cornflakes 200rs per month 
+
+Now the only problem is that her grocery budget changes every month and is based on her income. In the first month of every year she starts with 10,000rs . And then every month her salary is increased by 1000rs. Now she decides to buy only the things that she can afford. 
+ 
+In the next upcoming months based on her salary she might be able to buy some more items.
+
+For eg. In January, her total bill will be of 60*31 + 42 + 56 + 200*31 = 8158rs (till vegetables only)
+From 10000 she is now left with 1842rs. This amount will be deposited into her bank account on the last day of the month itself.
+
+After few months Camila will want to calculate her  savings.
+
+Input: The month no. at the end of which Camila calculates her savings
+
+Output: 
+1.The grocery item name, according to the priority, uptill which she can afford to buy in that particular month.
+2. Total savings at the end of that month
+
+Sample input:
+4 (ie. April)
+
+Sample output:
+Pulses
+9914rs
+
+Explanation of output : 
+April salary =13000rs
+April bill =12398rs
+Account balance = 1842(jan) + 3622(feb) + 3842(mar) + 602(apr) = 9914rs
+
+Note: not a leap year
+
+
+
+
+
+
+
+
+
+
+
+#include<iostream>
+#include<string>
+using namespace std;
+
+int main()
+{
+    int month,days,salary=10000,total,savings=0;
+    cin>>month;
+    
+    int temp=0;
+    //char name[10]={'milk', 'salt','butter','vegetables','pulses','fruits','eggs','biscuits','curd','cornflakes'};
+
+    for(int j=0;j<month;j++)
+    {
+        total=0;
+        if(j==0||j==2||j==4||j==6||j==8)
+        {
+            days=31;
+        }
+        else if(j==1)
+            days=28;
+        else
+            days=30;
+        int price[10]={60*days, 42, 56, 200*days, 150*days, 550, 300, 250, 20*days, 200};
+        //cout<<price[0]<<" ";
+        for(int i=0;i<10;i++)
+        {
+            if(total<salary)
+                total+=price[i];
+            if(total>salary)
+            {
+                total-=price[i];
+                break;
+            }
+        
+        }
+            temp=salary-total;
+            cout<<temp<<" ";
+            savings+=temp;
+            salary+=1000;
+    }
+    //cout<<savings;
+    return 0;
+}

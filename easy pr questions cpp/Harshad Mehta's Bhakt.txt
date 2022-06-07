@@ -1,0 +1,77 @@
+Tinku is huge fan of Harshad Mehta. He has got a friend in a corporation. Stock prize of that corporation is volatile.  Tinku can buy stocks only once then he has to sell them off. As he has got friend in corporation he exactly knows prize of stocks in that particular week. Now tinku wants to maximize his profits. Help tinku by writing a program which can calculate maximum profit tinku can make.
+
+Condition :
+Once stock is purchased that has to be sold before making purchase again.
+Once stock is bought it has to be sold off before the prices fall.
+
+For Example array of particular week is {990, 880, 60, 310, 20, 300, 395} 
+Output (Total profit) : 625
+
+In this example tinku buys stocks on day 3rd and sells on day 4th making a profit of 
+310 - 60 = 250
+
+Then he again buys stock on 5th day and sells on 7th making a profit of 
+395 - 20 = 375.
+
+Total profit (Output) tinku makes is 
+250 + 375 = 625. 
+Write a program to help tinku.
+
+
+
+
+
+
+
+
+
+
+
+
+#include<iostream>
+#include<string>
+using namespace std;
+
+
+int main()
+{
+    int arr[7],initial=0,j,count,final,profit=0;
+    int i=0;
+    for(int i=0;i<7;i++)
+    {
+        cin>>arr[i];
+    }
+    for(count=1;count<7;)
+    {
+        for(i;i<7;i++)
+        {
+            if(arr[i]>arr[i+1])
+            {
+                count++;
+                continue;
+            }
+            else
+            {
+                initial=arr[i];
+                break;
+            }
+        }
+        for(j=i;j<7;j++)
+        {
+            if(arr[j]<arr[j+1])
+            {
+                count++;
+                continue;
+            }
+            else
+            {
+                final=arr[j];
+                break;
+            }
+        }
+        profit+=(final-initial);
+        i=j;
+    }
+    cout<<profit;
+    return 0;
+}

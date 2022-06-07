@@ -1,0 +1,50 @@
+Catherine is teaching her little sister to find vowels in her Lesson 1, Myself. 
+Here the student has to give 
+their introduction in 3 lines.
+
+The little child is asked to find the vowels and replace them with numbers starting from 1 and moving on 
+as 2,3,4…
+And finally she is supposed to report the total number of vowels did she find.
+
+Input:
+• Introduction of 3 lines (in a paragraph form).
+
+
+Output:
+• The vowels in the paragraph to be replaced by numbers.
+• Total no. of vowels found.
+Example…
+
+
+➢ Input:
+My name is Josephine. I study in class 1. My hobbies are drawing and dancing.
+
+➢ Output: 
+My n1m2 3s J4s5ph6n7. 8 st9dy 10n cl11ss 1. My h12bb1314s 15r16 dr17w18ng 19nd d20nc21ng.
+21
+
+
+
+
+
+
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    string s1;
+    char num='0';
+    getline(cin,s1);
+    int l=s1.length();
+    for(int i=0;i<l;i++)
+    {
+        if(int(s1[i])==97|| int(s1[i])==101 ||int(s1[i])==105 ||int(s1[i])==111 || int(s1[i])==117)
+        {
+            num++;
+            s1[i]=num;
+        }
+    }
+    cout<<s1<<" "<<char(num);
+    return 0;
+}

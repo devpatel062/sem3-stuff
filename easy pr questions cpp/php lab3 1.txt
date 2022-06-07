@@ -1,0 +1,64 @@
+if(isset($_POST["username"]) & isset($_POST["password"]))
+{
+    if(isset($_POST["remember"]))
+    {
+        $cookie_name="cookie1";
+        $cookie_value="username";
+        $cookie_expire= time()+60*2;
+        setCookie($cookie_name,$cookie_value,$cookie_expire);
+
+            echo "cookie set for 2 minutes..";  
+            
+            if(isset($_POST["username"]==$_COOKIE['cookie1']) & isset($_POST["password"]))
+            {
+                if(isset($_POST["remember"]))
+                {
+                    echo" you are already logged in...";
+               }
+               else
+               {
+                   echo"Username/password invalid";
+               }
+            }
+    }
+    else
+    {
+        $cookie_name='cookie1';
+        $cookie_value='username';
+        $cookie_expire= time()+60*1;
+        setCookie($cookie_name,$cookie_value,$cookie_expire);
+
+        echo "cookie set for 1 minute...";
+        
+    }
+    
+    
+}
+else
+{
+    echo"you must supply username and password";
+}
+
+?>
+
+<html>
+<body>
+<h1>USER LOGIN</h1>
+
+<form method="POST">
+<tr>
+<p><td>USERNAME:</td>
+<td><input type="text" name="username"></td>
+</tr><br></p>
+
+<tr>
+<p><td>PASSWORD:</td>
+<td><input type="text" name="password"></td>
+</tr><br></p>
+
+<tr>
+<p><label><input type="checkbox" name="remember"><td>REMEMBER ME</td></label><br></p>
+<label><input type="submit" name="submit" value="LOGIN"></label>
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+Hellooo, Charles here is sending cards to his ‘n’ friends. For this, he has a sheet of paper of size w×h, which can be cut into pieces.
+Charles can cut any sheet of paper w×h that he has in only two cases:
+1.	If w is even, then he can cut the sheet in half and get two sheets of size w2×h;
+2.	If h is even, then he can cut the sheet in half and get two sheets of size w×h2;
+If w and h are even at the same time, then Charles can cut the sheet according to any of the rules above.
+After cutting a sheet of paper, the total number of sheets of paper is increased by 1.
+Help Charles to find out if he can cut his sheet of size w×h at into n or more pieces, using only the rules described above.
+
+Input
+The first line contains the number of test cases‘t’.
+Each test case consists of one line containing three integers w, h, n the width and height of the sheet Charles has and the number of friends he needs to send a postcard to.
+
+Output
+For each test case, output on a separate line:
+"YES", if it is possible to cut a sheet of size w×h into at least n pieces; "NO" otherwise.
+
+Example
+-> Input
+3
+2 2 3
+3 3 2
+1 4 4
+-> Output
+YES
+NO
+YES
+
+
+
+
+
+
+
+#include<iostream>
+#include<string>
+using namespace std;
+
+int main()
+{
+    int test_cases,w,h,n,count;
+    cin>>test_cases;
+    for(int i=0;i<test_cases;i++)
+    {
+        cin>>w>>h>>n;
+        count=1;
+        for(int j=1;j<=n;j++)
+        {
+            if(w%2==0 && h%2==0)
+            {
+                for(;w%2==0;)
+                {
+                    w/=2;
+                    count*=2;
+                }
+                for(;h%2==0;)
+                {
+                    h/=2;
+                    count*=2;
+                }
+            }
+            else if(w%2==0)
+            {
+                w/=2;
+                count=(j*2);
+            }
+            else if(h%2==0)
+            {
+                h/=2;
+                count=(j*2);
+            }
+        }
+        if(count>=n)
+            cout<<"YES"<<count;
+        else
+            cout<<"NO";
+    }
+    return 0;
+}
